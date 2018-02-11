@@ -9,19 +9,17 @@
     <name>Supermarket checkout</name>
 
     <properties>
-        <!-- [WARNING] Using platform encoding (UTF-8 actually) to copy filtered
-            resources, i.e. build is platform dependent! -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!-- other plugin versions -->
         <version.surefire.plugin>2.19.1</version.surefire.plugin>
         <version.maven.jxr.plugin>2.5</version.maven.jxr.plugin>
         <version.project.info.reports.plugin>2.9</version.project.info.reports.plugin>
 
-        <!-- other libraries versions -->
         <version.junit>4.12</version.junit>
         <version.slf4j>1.7.22</version.slf4j>
         <version.guava>24.0-jre</version.guava>
+        <version.itext.pdf>5.5.10</version.itext.pdf>
+        <version.pdf.box>2.0.4</version.pdf.box>
 
         <!-- maven-compiler-plugin -->
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -51,12 +49,12 @@
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itextpdf</artifactId>
-            <version>5.5.10</version>
+            <version>${version.itext.pdf}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
             <artifactId>pdfbox</artifactId>
-            <version>2.0.4</version>
+            <version>${version.pdf.box}</version>
         </dependency>
     </dependencies>
 

@@ -19,7 +19,7 @@ import java.util.Optional;
  */
 public class CashRegisterService {
 
-    private static Logger LOG = LoggerFactory.getLogger(CashRegisterService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CashRegisterService.class);
 
     private List<Item> basket = new ArrayList<>();
     private List<Rule> specialOffers = new ArrayList<>();
@@ -117,7 +117,7 @@ public class CashRegisterService {
 
         try {
             String file = registerService.appyPriceRulesAndPrintReceipt();
-            LOG.info("A new receipt created: " + file);
+            LOG.info("A new receipt created: {}", file);
         } catch (Exception e) {
             LOG.error("An error occured during preparing the receipt", e);
         }

@@ -1,6 +1,6 @@
 package receipt;
 
-import base.BaseTest;
+import base.Base;
 import item.Item;
 import org.junit.Test;
 
@@ -14,10 +14,10 @@ import static org.junit.Assert.fail;
 /**
  * Created by rafal on 10/02/2018.
  */
-public class PdfReceiptGeneratorTest extends BaseTest {
+public class PdfReceiptGeneratorTest extends Base {
     @Test
     public void createReceiptTest() throws Exception {
-        List<Item> items = new BaseTest.ItemDataBuilder()
+        List<Item> items = new Base.ItemDataBuilder()
                 .addItemToList(Item.newInstance(itemA))
                 .addItemToList(Item.newInstance(itemB))
                 .addItemToList(Item.newInstance(itemV))

@@ -1,6 +1,6 @@
 package rule.impl;
 
-import base.BaseTest;
+import base.Base;
 import item.Item;
 
 import static org.junit.Assert.*;
@@ -18,7 +18,7 @@ import java.util.function.Predicate;
 /**
  * Created by rafal on 09/02/2018.
  */
-public class BuyNForSpecialTest extends BaseTest {
+public class BuyNForSpecialTest extends Base {
 
     @Test
     public void buyNForSpecialMissingItemIdTest() {

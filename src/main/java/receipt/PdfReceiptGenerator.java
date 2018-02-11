@@ -6,6 +6,7 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import item.Item;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
@@ -22,7 +23,7 @@ public class PdfReceiptGenerator implements ReceiptGenerator {
     private static NumberFormat format = NumberFormat.getCurrencyInstance(Locale.UK);
 
     @Override
-    public String createReceipt(List<Item> items, BigDecimal totalToPay, BigDecimal totalDiscount) throws Exception {
+    public String createReceipt(List<Item> items, BigDecimal totalToPay, BigDecimal totalDiscount) throws DocumentException, FileNotFoundException {
         Document document = new Document();
         String receiptName = "Receipt_" + new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss").format(new Date()) + ".pdf";
         PdfWriter.getInstance(document, new FileOutputStream(receiptName));
@@ -33,9 +34,7 @@ public class PdfReceiptGenerator implements ReceiptGenerator {
 
         PdfPTable table = new PdfPTable(4);
         addTableHeader(table);
-        items.forEach(item -> {
-            addRow(table, item);
-        });
+        items.forEach(item -> addRow(table, item));
         document.add(table);
         font = FontFactory.getFont(FontFactory.COURIER, 12, BaseColor.BLACK);
         addPriceParagraph("Total discount: " + format.format(totalDiscount), document, font, Element.ALIGN_LEFT);

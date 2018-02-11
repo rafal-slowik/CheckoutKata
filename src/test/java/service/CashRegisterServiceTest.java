@@ -1,8 +1,9 @@
 package service;
 
-import base.BaseTest;
+import base.Base;
 import item.Item;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import receipt.PdfReceiptGenerator;
@@ -20,7 +21,7 @@ import static org.junit.Assert.*;
 /**
  * Created by rafal on 10/02/2018.
  */
-public class CashRegisterServiceTest extends BaseTest {
+public class CashRegisterServiceTest extends Base {
 
     private CashRegisterService service;
     private String generatedReceiptFile;
@@ -94,7 +95,7 @@ public class CashRegisterServiceTest extends BaseTest {
         service.addSpecialOffer(rule);
         assertNotNull(service.getSpecialOffers());
         assertTrue(service.getSpecialOffers().contains(rule));
-        assertEquals(size + 1, service.getSpecialOffers().size());
+        Assert.assertEquals(size + 1, service.getSpecialOffers().size());
     }
 
     @Test
@@ -103,6 +104,6 @@ public class CashRegisterServiceTest extends BaseTest {
         int size = service.getBasket().size();
         service.addItemToBasket(new Item("A", BigDecimal.valueOf(2.33)));
         assertNotNull(service.getBasket());
-        assertEquals(size + 1, service.getBasket().size());
+        Assert.assertEquals(size + 1, service.getBasket().size());
     }
 }

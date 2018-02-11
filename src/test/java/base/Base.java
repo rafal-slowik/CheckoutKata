@@ -1,6 +1,7 @@
 package base;
 
 import item.Item;
+import item.Item;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.List;
 /**
  * Created by rafal on 10/02/2018.
  */
-public class BaseTest {
+public class Base {
 
     protected static BigDecimal specialPriceA = BigDecimal.valueOf(4.25);
 

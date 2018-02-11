@@ -1,24 +1,28 @@
 package item;
 
-import base.BaseTest;
+import base.Base;
+import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
 import java.math.BigDecimal;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 /**
  * Created by rafal on 10/02/2018.
  */
-public class ItemTest extends BaseTest {
+public class ItemTest extends Base {
 
     @Test
     public void testGetters() {
         final String itemId = "A";
         final BigDecimal price = BigDecimal.valueOf(2.33);
         Item item = new Item(itemId, price);
-        assertEquals(itemId, item.getItemId());
-        assertEquals(price, item.getNormalPrice());
-        assertEquals(price, item.getRealPrice());
-        assertEquals(false, item.isActionProduct());
+        Assert.assertEquals(itemId, item.getItemId());
+        Assert.assertEquals(price, item.getNormalPrice());
+        Assert.assertEquals(price, item.getRealPrice());
+        Assert.assertEquals(false, item.isActionProduct());
     }
 
     @Test
@@ -27,12 +31,12 @@ public class ItemTest extends BaseTest {
         final BigDecimal price = BigDecimal.valueOf(2.33);
         final BigDecimal newRealPrice = BigDecimal.valueOf(2.55);
         Item item = new Item(itemId, price);
-        assertEquals(price, item.getRealPrice());
-        assertEquals(false, item.isActionProduct());
+        Assert.assertEquals(price, item.getRealPrice());
+        Assert.assertEquals(false, item.isActionProduct());
         item.setRealPrice(newRealPrice);
         item.setActionProduct(true);
-        assertEquals(newRealPrice, item.getRealPrice());
-        assertEquals(true, item.isActionProduct());
+        Assert.assertEquals(newRealPrice, item.getRealPrice());
+        Assert.assertEquals(true, item.isActionProduct());
     }
 
     @Test
@@ -61,7 +65,7 @@ public class ItemTest extends BaseTest {
         Item itemA = new Item("A", BigDecimal.valueOf(3.33));
         Item itemAClone = Item.newInstance(itemA);
 
-        assertEquals(itemA.getNormalPrice(), itemAClone.getNormalPrice());
-        assertEquals(itemA.getItemId(), itemAClone.getItemId());
+        Assert.assertEquals(itemA.getNormalPrice(), itemAClone.getNormalPrice());
+        Assert.assertEquals(itemA.getItemId(), itemAClone.getItemId());
     }
 }

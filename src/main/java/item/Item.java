@@ -8,6 +8,7 @@ import java.math.BigDecimal;
  * Created by rafal on 09/02/2018.
  */
 public class Item {
+
     private String itemId;
     private BigDecimal normalPrice;
     private BigDecimal realPrice;

@@ -63,6 +63,7 @@ public class PdfReceiptGenerator implements ReceiptGenerator {
     }
 
     private void addTableHeader(PdfPTable table) {
+        
         Stream.of("Item Name", "Normal Price", "Discount", "To Pay")
                 .forEach(columnTitle -> {
                     PdfPCell header = new PdfPCell();

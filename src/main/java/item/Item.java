@@ -3,7 +3,7 @@ package item;
 import java.math.BigDecimal;
 
 /**
- * Item entity.
+ * An Item entity.
  *
  * Created by rafal on 09/02/2018.
  */

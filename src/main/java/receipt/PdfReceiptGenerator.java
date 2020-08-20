@@ -22,15 +22,6 @@ public class PdfReceiptGenerator implements ReceiptGenerator {
 
     private static NumberFormat format = NumberFormat.getCurrencyInstance(Locale.UK);
 
-    /**
-     *
-     * @param items
-     * @param totalToPay
-     * @param totalDiscount
-     * @return
-     * @throws DocumentException
-     * @throws FileNotFoundException
-     */
     @Override
     public String createReceipt(List<Item> items, BigDecimal totalToPay, BigDecimal totalDiscount) throws DocumentException, FileNotFoundException {
         Document document = new Document();

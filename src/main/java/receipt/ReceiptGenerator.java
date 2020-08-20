@@ -10,13 +10,5 @@ import java.util.List;
  */
 public interface ReceiptGenerator {
 
-    /**
-     *
-     * @param items
-     * @param totalToPay
-     * @param totalDiscount
-     * @return
-     * @throws Exception
-     */
     String createReceipt(List<Item> items, BigDecimal totalToPay, BigDecimal totalDiscount) throws Exception;
 }

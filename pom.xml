@@ -15,7 +15,7 @@
         <version.maven.jxr.plugin>2.5</version.maven.jxr.plugin>
         <version.project.info.reports.plugin>2.9</version.project.info.reports.plugin>
 
-        <version.junit>4.12</version.junit>
+        <version.junit>4.13.1</version.junit>
         <version.slf4j>1.7.22</version.slf4j>
         <version.guava>24.0-jre</version.guava>
         <version.itext.pdf>5.5.10</version.itext.pdf>
